@@ -14,7 +14,8 @@
     </head>
     <body>
         <h1>Lista de Funcionários</h1>
-
+        <form action="employeesInsertPage.jsp"><button type="submit">Adicionar Novo Funcionario</button> </form>
+        
         <table border="1" cellpadding="5">
             <caption><h2>List of users</h2></caption>
             <tr>
@@ -33,5 +34,6 @@
                 </tr>
             </c:forEach>
         </table>
+        <form action="employeesInsertPage.jsp"><button type="submit">Adicionar Novo Funcionario</button> </form>
     </body>
 </html>
