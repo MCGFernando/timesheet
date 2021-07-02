@@ -13,6 +13,6 @@
         <title>TimeSheet</title>
     </head>
     <body>
-        <c:redirect url="EmployeesController"></c:redirect>
+        <c:redirect url="EmployeesController?action=list"></c:redirect>
     </body>
 </html>

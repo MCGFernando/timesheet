@@ -8,6 +8,7 @@ package com.cligest.timesheet.domain;
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
@@ -28,6 +29,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @NamedQueries({
     @NamedQuery(name = "LogCardAction.findAll", query = "SELECT l FROM LogCardAction l"),
     @NamedQuery(name = "LogCardAction.findByIdCard", query = "SELECT l FROM LogCardAction l WHERE l.logCardActionPK.idCard = :idCard"),
+    @NamedQuery(name = "LogCardAction.findByIdEmployees", query = "SELECT l FROM LogCardAction l WHERE l.idEmployee.idEmployee = :idEmployee"),
     @NamedQuery(name = "LogCardAction.findByDatetime", query = "SELECT l FROM LogCardAction l WHERE l.logCardActionPK.datetime = :datetime"),
     @NamedQuery(name = "LogCardAction.findByImageFile", query = "SELECT l FROM LogCardAction l WHERE l.imageFile = :imageFile")})
 public class LogCardAction implements Serializable {
@@ -41,7 +43,7 @@ public class LogCardAction implements Serializable {
     @ManyToOne(optional = false)
     private Actions idAction;
     @JoinColumn(name = "id_employee", referencedColumnName = "id_employee")
-    @ManyToOne(optional = false)
+    @ManyToOne(optional = false, cascade = CascadeType.PERSIST)
     private Employees idEmployee;
     @JoinColumn(name = "id_device", referencedColumnName = "id_device")
     @ManyToOne(optional = false)

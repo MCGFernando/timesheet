@@ -6,8 +6,10 @@
 package com.cligest.timesheet.controller;
 
 import com.cligest.timesheet.dao.EmployeesDAO;
+import com.cligest.timesheet.dao.LogCardActionDAO;
 import com.cligest.timesheet.dao.LogCardStateDAO;
 import com.cligest.timesheet.domain.Employees;
+import com.cligest.timesheet.domain.LogCardAction;
 import com.cligest.timesheet.domain.LogCardState;
 import com.cligest.timesheet.domain.LogCardStatePK;
 import java.io.IOException;
@@ -24,8 +26,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author maro.fernando
  */
-@WebServlet(name = "EmployeesController", urlPatterns = {"/EmployeesController"})
-public class EmployeesController extends HttpServlet {
+@WebServlet(name = "LogCardActionController", urlPatterns = {"/LogCardActionController"})
+public class LogCardActionController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -40,43 +42,11 @@ public class EmployeesController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            String action = request.getParameter("action");
-            String jsp = null;
-            EmployeesDAO eDAO = new EmployeesDAO();
-            out.println("Size ");
-            if (action.equals("list")) {
-                List<Employees> lista = eDAO.findAll();
-                out.println("Size " + lista.size());
-                jsp = "employeesListPage.jsp";
-                request.setAttribute("lista", lista);
-            } else {
-                Integer generatedId = -1;
-                Integer idEmployee = Integer.valueOf(request.getParameter("idEmployee"));
-                String employeeName = request.getParameter("employeeName");
-                String sAPCCName = request.getParameter("sAPCCName");
-                String ws = request.getParameter("ws");
-                Employees e = new Employees(idEmployee, employeeName, sAPCCName, ws);
-                generatedId = eDAO.inserir(e);
-                
-                String idCard = request.getParameter("idCard");
-                Integer idCardState = Integer.valueOf( request.getParameter("idCardState"));
-                String description = request.getParameter("description");
-                Date datetime = new Date();
-                
-                LogCardStatePK lPK = new LogCardStatePK(idCard, datetime);
-                LogCardState l = new LogCardState( lPK, idCardState, e, description);
-                LogCardStateDAO lDAO = new LogCardStateDAO();
-                lDAO.inserir(l);
-                
-                
-                List<Employees> lista = eDAO.findAll();
-                request.setAttribute("lista", lista);
-                jsp = "employeesListPage.jsp";
-            }
-
-            /*for (Employees e : lista)
-             out.println("Employee " + e.getEmployeeName());*/
-            request.getRequestDispatcher(jsp).forward(request, response);
+            Integer idEmployee = Integer.valueOf(request.getParameter("idEmployee"));
+            LogCardActionDAO lDAO = new LogCardActionDAO();
+            List<LogCardAction> lista = lDAO.findById(idEmployee);
+            request.setAttribute("lista", lista);
+            request.getRequestDispatcher("logCardActionListPage.jsp").forward(request, response);
         }
     }
 

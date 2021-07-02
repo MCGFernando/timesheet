@@ -22,7 +22,11 @@ public class EmployeesDAO implements EmployeesRepository{
     
     @Override
     public Integer inserir(Employees e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        EntityManager em = PersistenceUnit.getEntityManager();
+        em.getTransaction().begin();
+        em.persist(e);
+        em.getTransaction().commit();
+        return e.getIdEmployee();
     }
 
     @Override

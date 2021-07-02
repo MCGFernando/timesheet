@@ -31,6 +31,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "LogCardState.findByIdCard", query = "SELECT l FROM LogCardState l WHERE l.logCardStatePK.idCard = :idCard"),
     @NamedQuery(name = "LogCardState.findByDatetime", query = "SELECT l FROM LogCardState l WHERE l.logCardStatePK.datetime = :datetime")})
 public class LogCardState implements Serializable {
+
     private static final long serialVersionUID = 1L;
     @EmbeddedId
     protected LogCardStatePK logCardStatePK;
@@ -55,6 +56,14 @@ public class LogCardState implements Serializable {
     public LogCardState(LogCardStatePK logCardStatePK, String description) {
         this.logCardStatePK = logCardStatePK;
         this.description = description;
+    }
+
+    public LogCardState(LogCardStatePK logCardStatePK, Integer idCardState, Employees e,String description) {
+        this.logCardStatePK = logCardStatePK;
+        this.cardState = new CardStates(idCardState);
+        this.idEmployee = e;
+        this.description = description;
+        
     }
 
     public LogCardState(String idCard, Date datetime) {
@@ -117,5 +126,5 @@ public class LogCardState implements Serializable {
     public String toString() {
         return "com.cligest.timesheet.domain.LogCardState[ logCardStatePK=" + logCardStatePK + " ]";
     }
-    
+
 }
