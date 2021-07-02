@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,7 +13,7 @@
         <title>TimeSheet - Lista Batidas de Ponto</title>
     </head>
     <body>
-        <h1>Lista Batidas de Ponto</h1>
+        <h1>Lista Batidas de Ponto</h1>${lista.size()}
         <table border="1" cellpadding="5">
             <caption><h2>List of users</h2></caption>
             <tr>
@@ -23,11 +24,10 @@
                 <th>DATA</th>
                 <th>IMGAGEM</th>
             </tr>
-            ${lista.size()}
             <c:forEach var="log" items="${lista}">
                 <tr>
                     <td><c:out value="${log.logCardActionPK.idCard}" /></td>
-                    <td><c:out value="${log.idEmployee.employeeName}" /></td>
+                    <td><c:out value="${log.idEmployee.idEmployee}" /></td>
                     <td><c:out value="${log.idDevice.description}" /></td>
                     <td><c:out value="${log.idAction.description}" /></td>
                     <td><c:out value="${log.logCardActionPK.datetime}" /></td>

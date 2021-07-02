@@ -50,7 +50,7 @@ public class LogCardActionDAO implements LogCardActionRepository {
         return lista;
     }
 
-    /*public static void main(String[] args) {
+    public static void main(String[] args) {
         LogCardActionDAO dao = new LogCardActionDAO();
         List<LogCardAction> lista = dao.findById(1296);
         for (LogCardAction l : lista)
@@ -63,6 +63,6 @@ public class LogCardActionDAO implements LogCardActionRepository {
                     + " : " + l.getImageFile()
             );
         
-    }*/
+    }
 
 }

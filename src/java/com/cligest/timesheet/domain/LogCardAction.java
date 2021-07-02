@@ -43,7 +43,7 @@ public class LogCardAction implements Serializable {
     @ManyToOne(optional = false)
     private Actions idAction;
     @JoinColumn(name = "id_employee", referencedColumnName = "id_employee")
-    @ManyToOne(optional = false, cascade = CascadeType.PERSIST)
+    @ManyToOne(optional = false)
     private Employees idEmployee;
     @JoinColumn(name = "id_device", referencedColumnName = "id_device")
     @ManyToOne(optional = false)

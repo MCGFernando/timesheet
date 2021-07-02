@@ -45,6 +45,7 @@ public class LogCardActionController extends HttpServlet {
             Integer idEmployee = Integer.valueOf(request.getParameter("idEmployee"));
             LogCardActionDAO lDAO = new LogCardActionDAO();
             List<LogCardAction> lista = lDAO.findById(idEmployee);
+            System.out.println("Card ID " + lista.get(0).getLogCardActionPK().getIdCard());
             request.setAttribute("lista", lista);
             request.getRequestDispatcher("logCardActionListPage.jsp").forward(request, response);
         }
