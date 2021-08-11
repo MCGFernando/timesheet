@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class employeesListPage_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class logCardActionListPage_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -54,86 +54,37 @@ public final class employeesListPage_jsp extends org.apache.jasper.runtime.HttpJ
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("<!DOCTYPE html>\r\n");
-      out.write("<html>\r\n");
-      out.write("    <head>\r\n");
-      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
-      out.write("        <title>TimeSheet - Employees</title>\r\n");
-      out.write("        <style>\r\n");
-      out.write("            .dropbtn {\r\n");
-      out.write("                background-color: #3498DB;\r\n");
-      out.write("                color: white;\r\n");
-      out.write("                padding: 16px;\r\n");
-      out.write("                font-size: 16px;\r\n");
-      out.write("                border: none;\r\n");
-      out.write("                cursor: pointer;\r\n");
-      out.write("            }\r\n");
-      out.write("\r\n");
-      out.write("            /* Dropdown button on hover & focus */\r\n");
-      out.write("            .dropbtn:hover, .dropbtn:focus {\r\n");
-      out.write("                background-color: #2980B9;\r\n");
-      out.write("            }\r\n");
-      out.write("\r\n");
-      out.write("            /* The container <div> - needed to position the dropdown content */\r\n");
-      out.write("            .dropdown {\r\n");
-      out.write("                position: relative;\r\n");
-      out.write("                display: inline-block;\r\n");
-      out.write("            }\r\n");
-      out.write("\r\n");
-      out.write("            /* Dropdown Content (Hidden by Default) */\r\n");
-      out.write("            .dropdown-content {\r\n");
-      out.write("                display: none;\r\n");
-      out.write("                position: absolute;\r\n");
-      out.write("                background-color: #f1f1f1;\r\n");
-      out.write("                min-width: 160px;\r\n");
-      out.write("                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);\r\n");
-      out.write("                z-index: 1;\r\n");
-      out.write("            }\r\n");
-      out.write("\r\n");
-      out.write("            /* Links inside the dropdown */\r\n");
-      out.write("            .dropdown-content a {\r\n");
-      out.write("                color: black;\r\n");
-      out.write("                padding: 12px 16px;\r\n");
-      out.write("                text-decoration: none;\r\n");
-      out.write("                display: block;\r\n");
-      out.write("            }\r\n");
-      out.write("\r\n");
-      out.write("            /* Change color of dropdown links on hover */\r\n");
-      out.write("            .dropdown-content a:hover {background-color: #ddd}\r\n");
-      out.write("\r\n");
-      out.write("            /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */\r\n");
-      out.write("            .show {display:block;}\r\n");
-      out.write("        </style>\r\n");
-      out.write("    </head>\r\n");
-      out.write("    <body>\r\n");
-      out.write("        <h1>Lista de Funcionários</h1>\r\n");
-      out.write("        <form action=\"employeesInsertPage.jsp\"><button type=\"submit\">Adicionar Novo Funcionario</button> </form>\r\n");
-      out.write("\r\n");
-      out.write("        <table border=\"1\" cellpadding=\"5\">\r\n");
-      out.write("            <caption><h2>List of users</h2></caption>\r\n");
-      out.write("            <tr>\r\n");
-      out.write("                <th>ID</th>\r\n");
-      out.write("                <th>Nome</th>\r\n");
-      out.write("                <th>SAP</th>\r\n");
-      out.write("                <th>WS</th>\r\n");
-      out.write("                <th>ACCAO</th>\r\n");
-      out.write("            </tr>\r\n");
-      out.write("            ");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("<!DOCTYPE html>\n");
+      out.write("<html>\n");
+      out.write("    <head>\n");
+      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
+      out.write("        <title>TimeSheet - Lista Batidas de Ponto</title>\n");
+      out.write("    </head>\n");
+      out.write("    <body>\n");
+      out.write("        <h1>Lista Batidas de Ponto</h1>");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${lista.size()}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("\r\n");
+      out.write("\n");
+      out.write("        <table border=\"1\" cellpadding=\"5\">\n");
+      out.write("            <caption><h2>List of users</h2></caption>\n");
+      out.write("            <tr>\n");
+      out.write("                <th>N CARTAO</th>\n");
+      out.write("                <th>NOME</th>\n");
+      out.write("                <th>DISPOSITIVO</th>\n");
+      out.write("                <th>ACCAO</th>\n");
+      out.write("                <th>DATA</th>\n");
+      out.write("                <th>IMGAGEM</th>\n");
+      out.write("            </tr>\n");
       out.write("            ");
       if (_jspx_meth_c_forEach_0(_jspx_page_context))
         return;
-      out.write("\r\n");
-      out.write("        </table>\r\n");
-      out.write("        <form action=\"employeesInsertPage.jsp\"><button type=\"submit\">Adicionar Novo Funcionario</button> </form>\r\n");
-      out.write("        \r\n");
-      out.write("    </body>\r\n");
-      out.write("</html>\r\n");
+      out.write("\n");
+      out.write("        </table>\n");
+      out.write("    </body>\n");
+      out.write("</html>\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;
@@ -155,40 +106,40 @@ public final class employeesListPage_jsp extends org.apache.jasper.runtime.HttpJ
     org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_forEach_0 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _jspx_tagPool_c_forEach_var_items.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
     _jspx_th_c_forEach_0.setPageContext(_jspx_page_context);
     _jspx_th_c_forEach_0.setParent(null);
-    _jspx_th_c_forEach_0.setVar("e");
+    _jspx_th_c_forEach_0.setVar("log");
     _jspx_th_c_forEach_0.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${lista}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
     int[] _jspx_push_body_count_c_forEach_0 = new int[] { 0 };
     try {
       int _jspx_eval_c_forEach_0 = _jspx_th_c_forEach_0.doStartTag();
       if (_jspx_eval_c_forEach_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
         do {
-          out.write("\r\n");
-          out.write("                <tr>\r\n");
+          out.write("\n");
+          out.write("                <tr>\n");
           out.write("                    <td>");
           if (_jspx_meth_c_out_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_0, _jspx_page_context, _jspx_push_body_count_c_forEach_0))
             return true;
-          out.write("</td>\r\n");
+          out.write("</td>\n");
           out.write("                    <td>");
           if (_jspx_meth_c_out_1((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_0, _jspx_page_context, _jspx_push_body_count_c_forEach_0))
             return true;
-          out.write("</td>\r\n");
+          out.write("</td>\n");
           out.write("                    <td>");
           if (_jspx_meth_c_out_2((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_0, _jspx_page_context, _jspx_push_body_count_c_forEach_0))
             return true;
-          out.write("</td>\r\n");
+          out.write("</td>\n");
           out.write("                    <td>");
           if (_jspx_meth_c_out_3((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_0, _jspx_page_context, _jspx_push_body_count_c_forEach_0))
             return true;
-          out.write("</td>\r\n");
-          out.write("                    <td>\r\n");
-          out.write("                        <form action=\"LogCardActionController\">\r\n");
-          out.write("                            <input type=\"hidden\" name=\"idEmployee\" value=\"");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${e.idEmployee}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("\"/>\r\n");
-          out.write("                            <input type=\"submit\" value=\"Ver Batida de Ponto\"/>\r\n");
-          out.write("                        </form>\r\n");
-          out.write("                    </td>\r\n");
-          out.write("                </tr>\r\n");
+          out.write("</td>\n");
+          out.write("                    <td>");
+          if (_jspx_meth_c_out_4((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_0, _jspx_page_context, _jspx_push_body_count_c_forEach_0))
+            return true;
+          out.write("</td>\n");
+          out.write("                    <td>");
+          if (_jspx_meth_c_out_5((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_0, _jspx_page_context, _jspx_push_body_count_c_forEach_0))
+            return true;
+          out.write("</td>\n");
+          out.write("                </tr>\n");
           out.write("            ");
           int evalDoAfterBody = _jspx_th_c_forEach_0.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
@@ -217,7 +168,7 @@ public final class employeesListPage_jsp extends org.apache.jasper.runtime.HttpJ
     org.apache.taglibs.standard.tag.rt.core.OutTag _jspx_th_c_out_0 = (org.apache.taglibs.standard.tag.rt.core.OutTag) _jspx_tagPool_c_out_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.OutTag.class);
     _jspx_th_c_out_0.setPageContext(_jspx_page_context);
     _jspx_th_c_out_0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_forEach_0);
-    _jspx_th_c_out_0.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${e.idEmployee}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
+    _jspx_th_c_out_0.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${log.logCardActionPK.idCard}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
     int _jspx_eval_c_out_0 = _jspx_th_c_out_0.doStartTag();
     if (_jspx_th_c_out_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _jspx_tagPool_c_out_value_nobody.reuse(_jspx_th_c_out_0);
@@ -235,7 +186,7 @@ public final class employeesListPage_jsp extends org.apache.jasper.runtime.HttpJ
     org.apache.taglibs.standard.tag.rt.core.OutTag _jspx_th_c_out_1 = (org.apache.taglibs.standard.tag.rt.core.OutTag) _jspx_tagPool_c_out_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.OutTag.class);
     _jspx_th_c_out_1.setPageContext(_jspx_page_context);
     _jspx_th_c_out_1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_forEach_0);
-    _jspx_th_c_out_1.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${e.employeeName}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
+    _jspx_th_c_out_1.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${log.idEmployee.idEmployee}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
     int _jspx_eval_c_out_1 = _jspx_th_c_out_1.doStartTag();
     if (_jspx_th_c_out_1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _jspx_tagPool_c_out_value_nobody.reuse(_jspx_th_c_out_1);
@@ -253,7 +204,7 @@ public final class employeesListPage_jsp extends org.apache.jasper.runtime.HttpJ
     org.apache.taglibs.standard.tag.rt.core.OutTag _jspx_th_c_out_2 = (org.apache.taglibs.standard.tag.rt.core.OutTag) _jspx_tagPool_c_out_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.OutTag.class);
     _jspx_th_c_out_2.setPageContext(_jspx_page_context);
     _jspx_th_c_out_2.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_forEach_0);
-    _jspx_th_c_out_2.setValue(new String(""));
+    _jspx_th_c_out_2.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${log.idDevice.description}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
     int _jspx_eval_c_out_2 = _jspx_th_c_out_2.doStartTag();
     if (_jspx_th_c_out_2.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _jspx_tagPool_c_out_value_nobody.reuse(_jspx_th_c_out_2);
@@ -271,13 +222,49 @@ public final class employeesListPage_jsp extends org.apache.jasper.runtime.HttpJ
     org.apache.taglibs.standard.tag.rt.core.OutTag _jspx_th_c_out_3 = (org.apache.taglibs.standard.tag.rt.core.OutTag) _jspx_tagPool_c_out_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.OutTag.class);
     _jspx_th_c_out_3.setPageContext(_jspx_page_context);
     _jspx_th_c_out_3.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_forEach_0);
-    _jspx_th_c_out_3.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${e.ws}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
+    _jspx_th_c_out_3.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${log.idAction.description}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
     int _jspx_eval_c_out_3 = _jspx_th_c_out_3.doStartTag();
     if (_jspx_th_c_out_3.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _jspx_tagPool_c_out_value_nobody.reuse(_jspx_th_c_out_3);
       return true;
     }
     _jspx_tagPool_c_out_value_nobody.reuse(_jspx_th_c_out_3);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_out_4(javax.servlet.jsp.tagext.JspTag _jspx_th_c_forEach_0, PageContext _jspx_page_context, int[] _jspx_push_body_count_c_forEach_0)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:out
+    org.apache.taglibs.standard.tag.rt.core.OutTag _jspx_th_c_out_4 = (org.apache.taglibs.standard.tag.rt.core.OutTag) _jspx_tagPool_c_out_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.OutTag.class);
+    _jspx_th_c_out_4.setPageContext(_jspx_page_context);
+    _jspx_th_c_out_4.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_forEach_0);
+    _jspx_th_c_out_4.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${log.logCardActionPK.datetime}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
+    int _jspx_eval_c_out_4 = _jspx_th_c_out_4.doStartTag();
+    if (_jspx_th_c_out_4.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_out_value_nobody.reuse(_jspx_th_c_out_4);
+      return true;
+    }
+    _jspx_tagPool_c_out_value_nobody.reuse(_jspx_th_c_out_4);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_out_5(javax.servlet.jsp.tagext.JspTag _jspx_th_c_forEach_0, PageContext _jspx_page_context, int[] _jspx_push_body_count_c_forEach_0)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:out
+    org.apache.taglibs.standard.tag.rt.core.OutTag _jspx_th_c_out_5 = (org.apache.taglibs.standard.tag.rt.core.OutTag) _jspx_tagPool_c_out_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.OutTag.class);
+    _jspx_th_c_out_5.setPageContext(_jspx_page_context);
+    _jspx_th_c_out_5.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_forEach_0);
+    _jspx_th_c_out_5.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${log.imageFile}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
+    int _jspx_eval_c_out_5 = _jspx_th_c_out_5.doStartTag();
+    if (_jspx_th_c_out_5.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_out_value_nobody.reuse(_jspx_th_c_out_5);
+      return true;
+    }
+    _jspx_tagPool_c_out_value_nobody.reuse(_jspx_th_c_out_5);
     return false;
   }
 }

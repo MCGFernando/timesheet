@@ -42,7 +42,7 @@ public class EmployeesDAO implements EmployeesRepository{
     @Override
     public List<Employees> findByColumnField(String id) {
         EntityManager em = PersistenceUnit.getEntityManager();
-        Query query = em.createNamedQuery("Employees.findByEmployeeName");
+        Query query = em.createNamedQuery("Fe.findByIDFichadeEpis\u00f3dio");
         query.setParameter("employeeName", id);
         List<Employees> lista = query.getResultList();
         //PersistenceUnit.close();

@@ -89,7 +89,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.taglibs.standard.tag.rt.core.RedirectTag _jspx_th_c_redirect_0 = (org.apache.taglibs.standard.tag.rt.core.RedirectTag) _jspx_tagPool_c_redirect_url_nobody.get(org.apache.taglibs.standard.tag.rt.core.RedirectTag.class);
     _jspx_th_c_redirect_0.setPageContext(_jspx_page_context);
     _jspx_th_c_redirect_0.setParent(null);
-    _jspx_th_c_redirect_0.setUrl("EmployeesController");
+    _jspx_th_c_redirect_0.setUrl("EmployeesController?action=list");
     int _jspx_eval_c_redirect_0 = _jspx_th_c_redirect_0.doStartTag();
     if (_jspx_th_c_redirect_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _jspx_tagPool_c_redirect_url_nobody.reuse(_jspx_th_c_redirect_0);

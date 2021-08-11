@@ -40,6 +40,8 @@ public class EmployeesController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
+            /* Este código deve ser escrito em service
+            */
             String action = request.getParameter("action");
             String jsp = null;
             EmployeesDAO eDAO = new EmployeesDAO();
